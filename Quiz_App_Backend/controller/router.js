@@ -10,27 +10,28 @@ const MongoQuestion = require('../models/Question');
 router.get('/', (req, res) => {
     db.Router.find()
     .then((router) => {
-      res.json('router/index', { router })
+      res.render('router/index', { router })
     })
     .catch(err => {
       console.log(err) 
-      res.json('error404')
+      res.render('error404')
     })
 })
 
 router.post('/', (req, res) => {
-    db.Router.create(req.body)
-    .then(() => {
-        res.redirect('/router')
+  console.log('WE SMACKED THE ROUTE!!!', req.body)
+    MongoNames.create(req.body)
+    .then((newNameCreated) => {
+        res.json(newNameCreated)
     })
     .catch(err => {
         console.log('err', err)
-        res.json('error404')
+        res.render('error404')
     })
   })
 
   router.get('/Name', (req, res) => {
-    res.json('models/Name')
+    res.render('models/Name')
   })
 
   router.get('/result', (req, res) => {
@@ -38,7 +39,7 @@ router.post('/', (req, res) => {
   });
   
   router.get('/Question', (req, res) => {
-    res.json('models/Question')
+    res.render('models/Question')
   })
   
   router.get('/quizs', (req, res) => {
