@@ -10,11 +10,11 @@ const MongoQuestion = require('../models/Question');
 router.get('/', (req, res) => {
     db.Router.find()
     .then((router) => {
-      res.render('router/index', { router })
+      res.json('router/index', { router })
     })
     .catch(err => {
       console.log(err) 
-      res.render('error404')
+      res.json('error404')
     })
 })
 
@@ -25,21 +25,24 @@ router.post('/', (req, res) => {
     })
     .catch(err => {
         console.log('err', err)
-        res.render('error404')
+        res.json('error404')
     })
   })
 
   router.get('/Name', (req, res) => {
-    res.render('models/Name')
+    res.json('models/Name')
   })
 
   router.get('/result', (req, res) => {
-    res.render('result')
+    res.json('result')
   });
   
   router.get('/Question', (req, res) => {
-    res.render('models/Question')
+    res.json('models/Question')
   })
   
+  router.get('/quizs', (req, res) => {
+    res.json('quiz', router)
+  })
 
 module.exports = router

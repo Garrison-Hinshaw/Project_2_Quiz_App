@@ -6,6 +6,7 @@ const app = express();
 const router = require('./controller/router')
 
 
+
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
     () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
   )
@@ -14,20 +15,22 @@ app.use('/router', router)
 
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.json('home')
 })
 
 app.get('*', (req, res) => {
-    res.render('quizzes')
+    res.json('quizzes')
 })
 
 app.get('*', (req, res) => {
-    res.render('result')
+    res.json('result')
 })
 
 app.get('*', (req, res) => {
-    res.render('<h1>404 Page </h1>')
+    res.json('<h1>404 Page </h1>')
 })
+
+/// app.use(express.static(path.join(__dirname, 'Quiz_App-Frontend', 'build')))
 
 app.listen(process.env.PORT, () => {
     console.log("I am alive port " + process.env.PORT)

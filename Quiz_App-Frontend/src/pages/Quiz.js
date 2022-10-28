@@ -1,13 +1,13 @@
 import Form from 'react-bootstrap/Form';
 
-const response = fetch(url);
-    fetch(url)
-        .then(response => {
-            // handle the response
-        })
-        .catch(error => {
-            // handle the error
-        });
+  // const response = fetch(url);
+  //     fetch(url)
+  //         .then(response => {
+  //             // handle the response
+  //         })
+  //         .catch(error => {
+  //             // handle the error
+  //         });
 
 
 
@@ -56,5 +56,7 @@ export function Quiz() {
         ))}
       </Form>
     )
+
+
 }
 
