@@ -3,32 +3,33 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import AllPosts from '../Components/allPosts';
+import '../Answer.css';
 
+const Home = () => {
+  console.log("We got clicked!");
+  const [name, setName] = useState("");
+  const [body, setBody] = useState("");
+  const [comment, setComment] = useState("");
+  const [commentTitle, title] = useState("");
+  const [commentsData, setCommentsData] = useState([]);
 
-  const Home = () => {
-    console.log("We got clicked!");
-    const [name, setName]= useState('')
-    const [body, setBody] = useState('')
-    const [comment, setComment] = useState('')
-    const [commentTitle, title] = useState('')
-    const [commentsData, setCommentsData] = useState([])
-    
-    const navigate = useNavigate()
-    function navigateToQuiz(){
-      navigate("/Quiz")
+  const navigate = useNavigate();
+  function navigateToQuiz() {
+    navigate("/Quiz");
+  }
+  const saveName = async () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        content: name,
+      }),
     };
-    const saveName = async () => {
-        const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            content: name,
-          })
-        };
-      const posts = await fetch('/quizzes', requestOptions)
-      //const cleanPosts = await posts.json()
-      document.getElementById('displayNameBox').value=""
-      navigateToQuiz();
+    const posts = await fetch("/quizzes", requestOptions);
+    //const cleanPosts = await posts.json()
+    document.getElementById("displayNameBox").value = "";
+    navigateToQuiz();
+  };
 
   console.log("name", name);
 
@@ -74,7 +75,7 @@ return (
           setName(e.target.value)
           }} type="displayname" placeholder="Name" />
       </Form.Group>
-      <Button id="submitButton" onClick={saveName}  variant="primary">
+      <Button className="Button"id="submitButton" onClick={saveName}  variant="primary">
         Submit
       </Button>
       <br></br>
@@ -112,4 +113,4 @@ return (
   );
 };
 
-export default Home
+export default Home;

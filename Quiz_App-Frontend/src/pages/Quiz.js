@@ -1,4 +1,4 @@
-import { Container, grid } from 'react-bootstrap';
+import { Container, FormText, grid } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
@@ -47,7 +47,7 @@ export function Quiz() {
       <>
         <Form className='Form1'>
         {[ 'radio' ].map((type) => (
-          <div key={`inline-${type}`} className="grid-container">
+          <Form.Group key={`inline-${type}`} className="grid-container">
             <Form.Check
               inline
               label="Which do you prefer?"
@@ -73,7 +73,8 @@ export function Quiz() {
               id={`inline-${type}-3`}
               onClick={catquestion}
             />
-          </div>
+          
+          </Form.Group>
         ))}
 
         
