@@ -1,4 +1,7 @@
- let answers = [
+
+
+let answer = [
+
     {
     id: 1,
     question : "What do you like to do in your free time?",
@@ -46,4 +49,6 @@
 }
 ]
 
-export default answers
+
+export default answer;
+
