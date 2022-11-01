@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "Project_2_Quiz_App",
+    "builds": [
+       { "src": "server.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/server.js" }
+    ]
+ }

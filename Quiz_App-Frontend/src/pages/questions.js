@@ -1,5 +1,6 @@
  let answers = [
     {
+    id: 1,
     question : "What do you like to do in your free time?",
     answer: [
         'Yes',
@@ -10,6 +11,7 @@
 
 
 {
+    id: 2,
     question : 'Choose which one you like more.',
     answer: [
         'Autumn',
@@ -17,6 +19,7 @@
     ]
 },
 {
+    id: 3,
     question: 'What do you do in your free time?',
     answer: [
         'Go Hiking',
@@ -26,6 +29,7 @@
     ]
 },
 {
+    id: 4,
     question : 'Which do you prefer?',
     answer: [
         'City',
@@ -33,6 +37,7 @@
     ]
 },
 {
+    id: 5,
     question: 'How would you describe your personality?',
     answer: [
         'Introvert',
