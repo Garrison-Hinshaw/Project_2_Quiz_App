@@ -1,4 +1,4 @@
-export default [
+ let answers = [
     {
     question : "What do you like to do in your free time?",
     answer: [
@@ -40,3 +40,5 @@ export default [
     ]
 }
 ]
+
+export default answers

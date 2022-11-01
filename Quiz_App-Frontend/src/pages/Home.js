@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import AllPosts from '../Components/allPosts';
+import Quiz from './Quiz';
 
 
   const Home = () => {
@@ -21,7 +22,7 @@ import AllPosts from '../Components/allPosts';
             content: name,
           })
         };
-      const posts = await fetch('/quizzes', requestOptions)
+      const post = await fetch('/Quiz')
       //const cleanPosts = await posts.json()
   }
 
@@ -66,7 +67,7 @@ return (
           setName(e.target.value)
           }} type="displayname" placeholder="Display Name" />
       </Form.Group>
-      <Button id="submitButton" onClick={saveName}  variant="primary">
+      <Button id="submitButton" onClick={Quiz}  variant="primary">
         Submit
       </Button>
       <br></br>

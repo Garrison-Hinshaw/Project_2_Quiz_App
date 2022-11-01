@@ -5,6 +5,7 @@ import { Quiz } from "./pages/Quiz";
 import React, { useState } from 'react';
 import { Cat } from './pages/cat';
 import { dog } from './pages/dog';
+import {questions}  from './pages/questions';
 
 function App() {
 

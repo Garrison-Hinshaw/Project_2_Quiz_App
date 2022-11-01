@@ -2,7 +2,6 @@ import { Container, grid } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
-import questions from './questions';
 
 export function Quiz() {
   let array = [0,];
