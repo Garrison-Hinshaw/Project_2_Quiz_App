@@ -18,12 +18,9 @@ function App() {
         <script src="Forum.css"></script>
         <div id="grid"></div>
       </body>
-      <li class = "grid-container"><Link to="/Quiz">Quiz</Link></li>
+      <li><Link to="/Quiz">Quiz</Link></li>
     </ul>
   </nav>
-  <body>
-    <h2 className="grid-conatiner" ></h2>
-  </body>
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/Quiz" element={<Quiz />}/>
